@@ -1,0 +1,14 @@
+{
+  "extends": "@nodecrew/typescript-config/react.json",
+  "compilerOptions": {
+    "outDir": "dist"
+  },
+  "include": [
+    "src",
+    "turbo",
+    "index.ts",
+    "tailwind.config.ts",
+    "postcss.config.mjs"
+  ],
+  "exclude": ["node_modules", "dist"]
+}

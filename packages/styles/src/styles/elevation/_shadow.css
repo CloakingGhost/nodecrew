@@ -1,0 +1,10 @@
+:root {
+  --style-alias-shadow-normal: 0px 1px 2px 0px oklch(0 0 0 / 0.08),
+    0px 1px 1px 0px oklch(0 0 0 / 0.04);
+  --style-alias-shadow-emphasize: 0px 3px 6px -1px oklch(0 0 0 / 0.12),
+    0px 2px 4px -1px oklch(0 0 0 / 0.08);
+  --style-alias-shadow-strong: 0px 8px 16px -2px oklch(0 0 0 / 0.15),
+    0px 4px 8px -2px oklch(0 0 0 / 0.1);
+  --style-alias-shadow-heavy: 0px 16px 32px -4px oklch(0 0 0 / 0.2),
+    0px 8px 16px -4px oklch(0 0 0 / 0.12);
+}

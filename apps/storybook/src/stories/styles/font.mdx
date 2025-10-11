@@ -1,0 +1,75 @@
+import { Meta } from "@storybook/blocks";
+import font from "./font.json";
+
+<Meta title="Styles/Font" />
+
+<h1>Font</h1>
+<p>DailyAlgo에서 사용하는 폰트입니다.</p>
+
+<h2>Sans-serif</h2>
+<div
+  style={{
+    display: "flex",
+    flexDirection: "column",
+    gap: "16px",
+    fontFamily: "Pretendard Variable",
+    backgroundColor: "var(--color-background-normal-alternative)",
+    padding: "16px",
+  }}
+>
+  <span style={{ fontSize: 32, fontWeight: 900 }}>프리텐다드 Pretendard</span>
+  <span style={{ fontSize: 32, fontWeight: 700 }}>프리텐다드 Pretendard</span>
+  <span style={{ fontSize: 32, fontWeight: 500 }}>프리텐다드 Pretendard</span>
+  <span style={{ fontSize: 32, fontWeight: 400 }}>프리텐다드 Pretendard</span>
+</div>
+<p>
+  DailyAlgo에서는 모든 텍스트에 기본적으로 <code>Pretendard Variable</code>을
+  사용합니다.
+</p>
+<hr />
+<p>
+  단, <code>Pretendard Variable</code> 폰트가 적용되지 않을 경우 다음 폰트가
+  순차적으로 대체되어 사용됩니다.
+</p>
+<ul>
+  {font.sans.map((font) => (
+    <li
+      key={font}
+      style={{
+        fontFamily: font,
+        fontSize: 20,
+        lineHeight: 1.5,
+      }}
+    >
+      {font}
+    </li>
+  ))}
+</ul>
+
+<h3>Example</h3>
+
+{/* prettier-ignore */}
+```jsx
+<div className="font-sans">
+  Pretendard Variable
+</div>; 
+```
+
+<h2>Mono</h2>
+<p>다음 폰트가 순차적으로 사용됩니다.</p>
+<ul>
+  {font.mono.map((font) => (
+    <li key={font} style={{ fontFamily: font, fontSize: 20, lineHeight: 1.5 }}>
+      {font}
+    </li>
+  ))}
+</ul>
+
+<h3>Example</h3>
+
+{/* prettier-ignore */}
+```jsx
+<div className="font-mono">
+  Pretendard Variable
+</div>; 
+```

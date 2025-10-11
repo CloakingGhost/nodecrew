@@ -1,0 +1,13 @@
+@import '@nodecrew/styles';
+
+:root {
+  background-color: var(--color-background-normal-alternative);
+}
+
+.docs-story {
+  background-color: var(--color-background-normal-alternative);
+}
+
+#storybook-root {
+  padding: 0 !important;
+}

@@ -1,0 +1,277 @@
+@import 'tailwindcss';
+
+@import './_palette.css';
+@import './_semantic.css';
+
+@theme {
+  --color-*: initial;
+
+  /************************************************/
+  /* Palette */
+  /************************************************/
+
+  /* Common */
+  --color-common-100: oklch(var(--color-global-common-100));
+  --color-common-0: oklch(var(--color-global-common-0));
+
+  /* Neutral */
+  --color-neutral-99: oklch(var(--color-global-neutral-99));
+  --color-neutral-95: oklch(var(--color-global-neutral-95));
+  --color-neutral-90: oklch(var(--color-global-neutral-90));
+  --color-neutral-80: oklch(var(--color-global-neutral-80));
+  --color-neutral-70: oklch(var(--color-global-neutral-70));
+  --color-neutral-60: oklch(var(--color-global-neutral-60));
+  --color-neutral-50: oklch(var(--color-global-neutral-50));
+  --color-neutral-40: oklch(var(--color-global-neutral-40));
+  --color-neutral-30: oklch(var(--color-global-neutral-30));
+  --color-neutral-22: oklch(var(--color-global-neutral-22));
+  --color-neutral-20: oklch(var(--color-global-neutral-20));
+  --color-neutral-15: oklch(var(--color-global-neutral-15));
+  --color-neutral-10: oklch(var(--color-global-neutral-10));
+  --color-neutral-5: oklch(var(--color-global-neutral-5));
+
+  /* Cool Neutral */
+
+  /* Cool Neutral */
+  --color-coolNeutral-99: oklch(var(--color-global-coolNeutral-99));
+  --color-coolNeutral-98: oklch(var(--color-global-coolNeutral-98));
+  --color-coolNeutral-97: oklch(var(--color-global-coolNeutral-97));
+  --color-coolNeutral-96: oklch(var(--color-global-coolNeutral-96));
+  --color-coolNeutral-95: oklch(var(--color-global-coolNeutral-95));
+  --color-coolNeutral-90: oklch(var(--color-global-coolNeutral-90));
+  --color-coolNeutral-80: oklch(var(--color-global-coolNeutral-80));
+  --color-coolNeutral-70: oklch(var(--color-global-coolNeutral-70));
+  --color-coolNeutral-60: oklch(var(--color-global-coolNeutral-60));
+  --color-coolNeutral-50: oklch(var(--color-global-coolNeutral-50));
+  --color-coolNeutral-40: oklch(var(--color-global-coolNeutral-40));
+  --color-coolNeutral-30: oklch(var(--color-global-coolNeutral-30));
+  --color-coolNeutral-25: oklch(var(--color-global-coolNeutral-25));
+  --color-coolNeutral-23: oklch(var(--color-global-coolNeutral-23));
+  --color-coolNeutral-22: oklch(var(--color-global-coolNeutral-22));
+  --color-coolNeutral-20: oklch(var(--color-global-coolNeutral-20));
+  --color-coolNeutral-17: oklch(var(--color-global-coolNeutral-17));
+  --color-coolNeutral-15: oklch(var(--color-global-coolNeutral-15));
+  --color-coolNeutral-10: oklch(var(--color-global-coolNeutral-10));
+  --color-coolNeutral-7: oklch(var(--color-global-coolNeutral-7));
+  --color-coolNeutral-5: oklch(var(--color-global-coolNeutral-5));
+
+  /* Blue */
+  --color-blue-99: oklch(var(--color-global-blue-99));
+  --color-blue-95: oklch(var(--color-global-blue-95));
+  --color-blue-90: oklch(var(--color-global-blue-90));
+  --color-blue-80: oklch(var(--color-global-blue-80));
+  --color-blue-70: oklch(var(--color-global-blue-70));
+  --color-blue-60: oklch(var(--color-global-blue-60));
+  --color-blue-55: oklch(var(--color-global-blue-55));
+  --color-blue-50: oklch(var(--color-global-blue-50));
+  --color-blue-45: oklch(var(--color-global-blue-45));
+  --color-blue-40: oklch(var(--color-global-blue-40));
+  --color-blue-30: oklch(var(--color-global-blue-30));
+  --color-blue-20: oklch(var(--color-global-blue-20));
+  --color-blue-10: oklch(var(--color-global-blue-10));
+
+  /* Red */
+  --color-red-99: oklch(var(--color-global-red-99));
+  --color-red-95: oklch(var(--color-global-red-95));
+  --color-red-90: oklch(var(--color-global-red-90));
+  --color-red-80: oklch(var(--color-global-red-80));
+  --color-red-70: oklch(var(--color-global-red-70));
+  --color-red-60: oklch(var(--color-global-red-60));
+  --color-red-50: oklch(var(--color-global-red-50));
+  --color-red-40: oklch(var(--color-global-red-40));
+  --color-red-30: oklch(var(--color-global-red-30));
+  --color-red-20: oklch(var(--color-global-red-20));
+  --color-red-10: oklch(var(--color-global-red-10));
+
+  /* Green */
+  --color-green-99: oklch(var(--color-global-green-99));
+  --color-green-95: oklch(var(--color-global-green-95));
+  --color-green-90: oklch(var(--color-global-green-90));
+  --color-green-80: oklch(var(--color-global-green-80));
+  --color-green-70: oklch(var(--color-global-green-70));
+  --color-green-60: oklch(var(--color-global-green-60));
+  --color-green-50: oklch(var(--color-global-green-50));
+  --color-green-40: oklch(var(--color-global-green-40));
+  --color-green-30: oklch(var(--color-global-green-30));
+  --color-green-20: oklch(var(--color-global-green-20));
+  --color-green-10: oklch(var(--color-global-green-10));
+
+  /* Orange */
+  --color-orange-99: oklch(var(--color-global-orange-99));
+  --color-orange-95: oklch(var(--color-global-orange-95));
+  --color-orange-90: oklch(var(--color-global-orange-90));
+  --color-orange-80: oklch(var(--color-global-orange-80));
+  --color-orange-70: oklch(var(--color-global-orange-70));
+  --color-orange-60: oklch(var(--color-global-orange-60));
+  --color-orange-50: oklch(var(--color-global-orange-50));
+  --color-orange-40: oklch(var(--color-global-orange-40));
+  --color-orange-30: oklch(var(--color-global-orange-30));
+  --color-orange-20: oklch(var(--color-global-orange-20));
+  --color-orange-10: oklch(var(--color-global-orange-10));
+
+  /* Red Orange */
+  --color-redOrange-99: oklch(var(--color-global-redOrange-99));
+  --color-redOrange-95: oklch(var(--color-global-redOrange-95));
+  --color-redOrange-90: oklch(var(--color-global-redOrange-90));
+  --color-redOrange-80: oklch(var(--color-global-redOrange-80));
+  --color-redOrange-70: oklch(var(--color-global-redOrange-70));
+  --color-redOrange-60: oklch(var(--color-global-redOrange-60));
+  --color-redOrange-50: oklch(var(--color-global-redOrange-50));
+  --color-redOrange-40: oklch(var(--color-global-redOrange-40));
+  --color-redOrange-30: oklch(var(--color-global-redOrange-30));
+  --color-redOrange-20: oklch(var(--color-global-redOrange-20));
+  --color-redOrange-10: oklch(var(--color-global-redOrange-10));
+
+  /* Lime */
+  --color-lime-99: oklch(var(--color-global-lime-99));
+  --color-lime-95: oklch(var(--color-global-lime-95));
+  --color-lime-90: oklch(var(--color-global-lime-90));
+  --color-lime-80: oklch(var(--color-global-lime-80));
+  --color-lime-70: oklch(var(--color-global-lime-70));
+  --color-lime-60: oklch(var(--color-global-lime-60));
+  --color-lime-50: oklch(var(--color-global-lime-50));
+  --color-lime-40: oklch(var(--color-global-lime-40));
+  --color-lime-30: oklch(var(--color-global-lime-30));
+  --color-lime-20: oklch(var(--color-global-lime-20));
+  --color-lime-10: oklch(var(--color-global-lime-10));
+
+  /* Cyan */
+  --color-cyan-99: oklch(var(--color-global-cyan-99));
+  --color-cyan-95: oklch(var(--color-global-cyan-95));
+  --color-cyan-90: oklch(var(--color-global-cyan-90));
+  --color-cyan-80: oklch(var(--color-global-cyan-80));
+  --color-cyan-70: oklch(var(--color-global-cyan-70));
+  --color-cyan-60: oklch(var(--color-global-cyan-60));
+  --color-cyan-50: oklch(var(--color-global-cyan-50));
+  --color-cyan-40: oklch(var(--color-global-cyan-40));
+  --color-cyan-30: oklch(var(--color-global-cyan-30));
+  --color-cyan-20: oklch(var(--color-global-cyan-20));
+  --color-cyan-10: oklch(var(--color-global-cyan-10));
+
+  /* Light Blue */
+  --color-lightBlue-99: oklch(var(--color-global-lightBlue-99));
+  --color-lightBlue-95: oklch(var(--color-global-lightBlue-95));
+  --color-lightBlue-90: oklch(var(--color-global-lightBlue-90));
+  --color-lightBlue-80: oklch(var(--color-global-lightBlue-80));
+  --color-lightBlue-70: oklch(var(--color-global-lightBlue-70));
+  --color-lightBlue-60: oklch(var(--color-global-lightBlue-60));
+  --color-lightBlue-50: oklch(var(--color-global-lightBlue-50));
+  --color-lightBlue-40: oklch(var(--color-global-lightBlue-40));
+  --color-lightBlue-30: oklch(var(--color-global-lightBlue-30));
+  --color-lightBlue-20: oklch(var(--color-global-lightBlue-20));
+  --color-lightBlue-10: oklch(var(--color-global-lightBlue-10));
+
+  /* Violet */
+  --color-violet-99: oklch(var(--color-global-violet-99));
+  --color-violet-95: oklch(var(--color-global-violet-95));
+  --color-violet-90: oklch(var(--color-global-violet-90));
+  --color-violet-80: oklch(var(--color-global-violet-80));
+  --color-violet-70: oklch(var(--color-global-violet-70));
+  --color-violet-60: oklch(var(--color-global-violet-60));
+  --color-violet-50: oklch(var(--color-global-violet-50));
+  --color-violet-40: oklch(var(--color-global-violet-40));
+  --color-violet-30: oklch(var(--color-global-violet-30));
+  --color-violet-20: oklch(var(--color-global-violet-20));
+  --color-violet-10: oklch(var(--color-global-violet-10));
+
+  /* Purple */
+  --color-purple-99: oklch(var(--color-global-purple-99));
+  --color-purple-95: oklch(var(--color-global-purple-95));
+  --color-purple-90: oklch(var(--color-global-purple-90));
+  --color-purple-80: oklch(var(--color-global-purple-80));
+  --color-purple-70: oklch(var(--color-global-purple-70));
+  --color-purple-60: oklch(var(--color-global-purple-60));
+  --color-purple-50: oklch(var(--color-global-purple-50));
+  --color-purple-40: oklch(var(--color-global-purple-40));
+  --color-purple-30: oklch(var(--color-global-purple-30));
+  --color-purple-20: oklch(var(--color-global-purple-20));
+  --color-purple-10: oklch(var(--color-global-purple-10));
+
+  /* Pink */
+  --color-pink-99: oklch(var(--color-global-pink-99));
+  --color-pink-95: oklch(var(--color-global-pink-95));
+  --color-pink-90: oklch(var(--color-global-pink-90));
+  --color-pink-80: oklch(var(--color-global-pink-80));
+  --color-pink-70: oklch(var(--color-global-pink-70));
+  --color-pink-60: oklch(var(--color-global-pink-60));
+  --color-pink-50: oklch(var(--color-global-pink-50));
+  --color-pink-40: oklch(var(--color-global-pink-40));
+  --color-pink-30: oklch(var(--color-global-pink-30));
+  --color-pink-20: oklch(var(--color-global-pink-20));
+  --color-pink-10: oklch(var(--color-global-pink-10));
+
+  /************************************************/
+  /* Semantic */
+  /************************************************/
+
+  /* Static */
+  --color-static-white: oklch(var(--color-alias-static-white));
+  --color-static-black: oklch(var(--color-alias-static-black));
+
+  /* Primary */
+  --color-primary-normal: oklch(var(--color-alias-primary-normal));
+
+  /* Label */
+  --color-label-normal: oklch(var(--color-alias-label-normal));
+  --color-label-strong: oklch(var(--color-alias-label-strong));
+  --color-label-neutral: oklch(var(--color-alias-label-neutral));
+  --color-label-alternative: oklch(var(--color-alias-label-alternative));
+  --color-label-assistive: oklch(var(--color-alias-label-assistive));
+  --color-label-disable: oklch(var(--color-alias-label-disable));
+
+  /* Background */
+  --color-background-normal-normal: oklch(
+    var(--color-alias-background-normal-normal)
+  );
+  --color-background-normal-alternative: oklch(
+    var(--color-alias-background-normal-alternative)
+  );
+  --color-background-elevated-normal: oklch(
+    var(--color-alias-background-elevated-normal)
+  );
+  --color-background-elevated-alternative: oklch(
+    var(--color-alias-background-elevated-alternative)
+  );
+
+  /* Interaction */
+  --color-interaction-inactive: oklch(var(--color-alias-interaction-inactive));
+  --color-interaction-disable: oklch(var(--color-alias-interaction-disable));
+
+  /* Line */
+  --color-line-normal-normal: oklch(var(--color-alias-line-normal-normal));
+  --color-line-normal-neutral: oklch(var(--color-alias-line-normal-neutral));
+  --color-line-normal-alternative: oklch(
+    var(--color-alias-line-normal-alternative)
+  );
+  --color-line-solid-normal: oklch(var(--color-alias-line-solid-normal));
+  --color-line-solid-neutral: oklch(var(--color-alias-line-solid-neutral));
+  --color-line-solid-alternative: oklch(
+    var(--color-alias-line-solid-alternative)
+  );
+
+  /* Status */
+  --color-status-positive: oklch(var(--color-alias-status-positive));
+  --color-status-cautionary: oklch(var(--color-alias-status-cautionary));
+  --color-status-negative: oklch(var(--color-alias-status-negative));
+
+  /* Accent */
+  --color-accent-lime: oklch(var(--color-alias-accent-lime));
+  --color-accent-cyan: oklch(var(--color-alias-accent-cyan));
+  --color-accent-lightBlue: oklch(var(--color-alias-accent-lightBlue));
+  --color-accent-violet: oklch(var(--color-alias-accent-violet));
+  --color-accent-purple: oklch(var(--color-alias-accent-purple));
+  --color-accent-pink: oklch(var(--color-alias-accent-pink));
+
+  /* Inverse */
+  --color-inverse-primary: oklch(var(--color-alias-inverse-primary));
+  --color-inverse-background: oklch(var(--color-alias-inverse-background));
+  --color-inverse-label: oklch(var(--color-alias-inverse-label));
+
+  /* Component */
+  --color-fill-normal: oklch(var(--color-alias-component-fill-normal));
+  --color-fill-strong: oklch(var(--color-alias-component-fill-strong));
+  --color-fill-alternative: oklch(
+    var(--color-alias-component-fill-alternative)
+  );
+  --color-material-dimmer: oklch(var(--color-alias-component-material-dimmer));
+}

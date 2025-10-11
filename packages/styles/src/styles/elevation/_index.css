@@ -1,0 +1,10 @@
+@import './_shadow.css';
+
+@theme {
+  --shadow-*: initial;
+
+  --shadow-normal: var(--style-alias-shadow-normal);
+  --shadow-emphasize: var(--style-alias-shadow-emphasize);
+  --shadow-strong: var(--style-alias-shadow-strong);
+  --shadow-heavy: var(--style-alias-shadow-heavy);
+}

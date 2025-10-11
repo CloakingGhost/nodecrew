@@ -1,0 +1,21 @@
+{
+  "name": "@nodecrew/styles",
+  "version": "0.0.1",
+  "exports": {
+    ".": "./styles.css",
+    "./colors": "./src/styles/colors/_index.css"
+  },
+  "scripts": {
+    "build": "pnpx @tailwindcss/cli -i ./index.css -o ./styles.css",
+    "dev": "pnpx @tailwindcss/cli -i ./index.css -o ./styles.css --watch",
+    "clean": "rm -rf node_modules .turbo dist"
+  },
+  "dependencies": {
+    "tailwind-scrollbar": "^4.0.2",
+    "tailwindcss": "^4.1",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@nodecrew/eslint-config": "workspace:*"
+  }
+}

@@ -1,0 +1,81 @@
+import { Meta } from "@storybook/blocks";
+import font from "./font.json";
+import typography from "./typography.json";
+
+<Meta title="Styles/Typography" />
+
+<h1>Typography</h1>
+<p>DailyAlgo에서 사용하는 타이포그래피 스타일입니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>ClassName Value</th>
+      <th>Font Size</th>
+      <th>Line Height</th>
+      <th>Letter Spacing</th>
+      <th>Normal</th>
+      <th>Medium</th>
+      <th>Bold</th>
+    </tr>
+  </thead>
+  <tbody>
+    {Object.entries(typography).map(([key, value]) => (
+      <tr key={key}>
+        <td>{key}</td>
+        <td>{value.font.split("/")[0]}</td>
+        <td>{value.font.split("/")[1].split(" ")[0]}</td>
+        <td>{value["letter-spacing"]}</td>
+        <td>
+          <span
+            style={{
+              font: value.font,
+              letterSpacing: value["letter-spacing"],
+              fontWeight: value["font-weight"]["normal"],
+            }}
+          >
+            {key}
+          </span>
+        </td>
+        <td>
+          <span
+            style={{
+              font: value.font,
+              letterSpacing: value["letter-spacing"],
+              fontWeight: value["font-weight"]["medium"],
+            }}
+          >
+            {key}
+          </span>
+        </td>
+        <td>
+          <span
+            style={{
+              font: value.font,
+              letterSpacing: value["letter-spacing"],
+              fontWeight: value["font-weight"]["bold"],
+            }}
+          >
+            {key}
+          </span>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+<br />
+<hr />
+<br />
+
+<h3>Example</h3>
+<p>
+  DailyAlgo에서는 타이포그래피를 Tailwind CSS의 Utility Classes를 사용합니다.
+</p>
+
+{/* prettier-ignore */}
+```jsx
+<div className="typography-{ value }">
+  display1
+</div>; 
+```

@@ -1,0 +1,137 @@
+:root {
+  /* Static */
+  --color-alias-static-white: var(--color-global-common-100);
+  --color-alias-static-black: var(--color-global-common-0);
+
+  /* Primary */
+  --color-alias-primary-normal: var(--color-global-blue-50);
+
+  /* Label */
+  --color-alias-label-normal: var(--color-global-coolNeutral-10);
+  --color-alias-label-strong: var(--color-global-common-0);
+  --color-alias-label-neutral: var(--color-global-coolNeutral-22) / 0.88;
+  --color-alias-label-alternative: var(--color-global-coolNeutral-25) / 0.61;
+  --color-alias-label-assistive: var(--color-global-coolNeutral-25) / 0.28;
+  --color-alias-label-disable: var(--color-global-coolNeutral-25) / 0.16;
+
+  /* Background */
+  --color-alias-background-normal-normal: var(--color-global-common-100);
+  --color-alias-background-normal-alternative: var(
+    --color-global-coolNeutral-99
+  );
+  --color-alias-background-elevated-normal: var(--color-global-common-100);
+  --color-alias-background-elevated-alternative: var(
+    --color-global-coolNeutral-99
+  );
+
+  /* Interaction */
+  --color-alias-interaction-inactive: var(--color-global-coolNeutral-70);
+  --color-alias-interaction-disable: var(--color-global-coolNeutral-98);
+
+  /* Line */
+  --color-alias-line-normal-normal: var(--color-global-coolNeutral-50) / 0.22;
+  --color-alias-line-normal-neutral: var(--color-global-coolNeutral-50) / 0.16;
+  --color-alias-line-normal-alternative: var(--color-global-coolNeutral-50) /
+    0.08;
+  --color-alias-line-solid-normal: var(--color-global-coolNeutral-96);
+  --color-alias-line-solid-neutral: var(--color-global-coolNeutral-97);
+  --color-alias-line-solid-alternative: var(--color-global-coolNeutral-98);
+
+  /* Status */
+  --color-alias-status-positive: var(--color-global-green-50);
+  --color-alias-status-cautionary: var(--color-global-orange-50);
+  --color-alias-status-negative: var(--color-global-red-50);
+
+  /* Accent */
+  --color-alias-accent-lime: var(--color-global-lime-50);
+  --color-alias-accent-cyan: var(--color-global-cyan-50);
+  --color-alias-accent-lightBlue: var(--color-global-lightBlue-50);
+  --color-alias-accent-violet: var(--color-global-violet-50);
+  --color-alias-accent-purple: var(--color-global-purple-50);
+  --color-alias-accent-pink: var(--color-global-pink-50);
+
+  /* Inverse */
+  --color-alias-inverse-primary: var(--color-global-blue-60);
+  --color-alias-inverse-background: var(--color-global-coolNeutral-15);
+  --color-alias-inverse-label: var(--color-global-coolNeutral-99);
+
+  /* Component */
+  --color-alias-component-fill-normal: var(--color-global-coolNeutral-50) / 0.08;
+  --color-alias-component-fill-strong: var(--color-global-coolNeutral-50) / 0.16;
+  --color-alias-component-fill-alternative: var(--color-global-coolNeutral-50) /
+    0.05;
+  --color-alias-component-material-dimmer: var(--color-global-coolNeutral-10) /
+    0.52;
+
+  &.dark {
+    /* Static */
+    --color-alias-static-white: var(--color-global-common-100);
+    --color-alias-static-black: var(--color-global-common-0);
+
+    /* Primary */
+    --color-alias-primary-normal: var(--color-global-blue-60);
+    --color-alias-primary-strong: var(--color-global-blue-55);
+    --color-alias-primary-heavy: var(--color-global-blue-50);
+
+    /* Label */
+    --color-alias-label-normal: var(--color-global-coolNeutral-99);
+    --color-alias-label-strong: var(--color-global-common-100);
+    --color-alias-label-neutral: var(--color-global-coolNeutral-90) / 0.88;
+    --color-alias-label-alternative: var(--color-global-coolNeutral-80) / 0.61;
+    --color-alias-label-assistive: var(--color-global-coolNeutral-80) / 0.28;
+    --color-alias-label-disable: var(--color-global-coolNeutral-70) / 0.16;
+
+    /* Background */
+    --color-alias-background-normal-normal: var(--color-global-coolNeutral-15);
+    --color-alias-background-normal-alternative: var(
+      --color-global-coolNeutral-5
+    );
+    --color-alias-background-elevated-normal: var(
+      --color-global-coolNeutral-17
+    );
+    --color-alias-background-elevated-alternative: var(
+      --color-global-coolNeutral-7
+    );
+
+    /* Interaction */
+    --color-alias-interaction-inactive: var(--color-global-coolNeutral-40);
+    --color-alias-interaction-disable: var(--color-global-coolNeutral-22);
+
+    /* Line */
+    --color-alias-line-normal-normal: var(--color-global-coolNeutral-50) / 0.32;
+    --color-alias-line-normal-neutral: var(--color-global-coolNeutral-50) / 0.28;
+    --color-alias-line-normal-alternative: var(--color-global-coolNeutral-50) /
+      0.22;
+    --color-alias-line-solid-normal: var(--color-global-coolNeutral-25);
+    --color-alias-line-solid-neutral: var(--color-global-coolNeutral-23);
+    --color-alias-line-solid-alternative: var(--color-global-coolNeutral-22);
+
+    /* Status */
+    --color-alias-status-positive: var(--color-global-green-60);
+    --color-alias-status-cautionary: var(--color-global-orange-60);
+    --color-alias-status-negative: var(--color-global-red-60);
+
+    /* Accent */
+    --color-alias-accent-lime: var(--color-global-lime-60);
+    --color-alias-accent-cyan: var(--color-global-cyan-60);
+    --color-alias-accent-lightBlue: var(--color-global-lightBlue-60);
+    --color-alias-accent-violet: var(--color-global-violet-60);
+    --color-alias-accent-purple: var(--color-global-purple-60);
+    --color-alias-accent-pink: var(--color-global-pink-60);
+
+    /* Inverse */
+    --color-alias-inverse-primary: var(--color-global-blue-50);
+    --color-alias-inverse-background: var(--color-global-coolNeutral-100);
+    --color-alias-inverse-label: var(--color-global-coolNeutral-10);
+
+    /* Component */
+    --color-alias-component-fill-normal: var(--color-global-coolNeutral-50) /
+      0.22;
+    --color-alias-component-fill-strong: var(--color-global-coolNeutral-50) /
+      0.28;
+    --color-alias-component-fill-alternative: var(--color-global-coolNeutral-50) /
+      0.12;
+    --color-alias-component-material-dimmer: var(--color-global-coolNeutral-10) /
+      0.74;
+  }
+}

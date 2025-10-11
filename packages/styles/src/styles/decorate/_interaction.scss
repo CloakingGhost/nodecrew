@@ -1,0 +1,60 @@
+@use 'sass:map';
+
+$interaction: (
+  normal: (
+    hovered: 5,
+    focused: 8,
+    pressed: 12,
+  ),
+  light: (
+    hovered: 3.75,
+    focused: 6,
+    pressed: 9,
+  ),
+  strong: (
+    hovered: 7.5,
+    focused: 12,
+    pressed: 18,
+  ),
+);
+
+@mixin interaction($variant: normal, $color: var(--color-alias-label-normal)) {
+  $interaction-style: map.get($interaction, $variant);
+  @if $interaction-style {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.1s ease;
+      background-color: $color;
+      border-radius: inherit;
+    }
+    &:hover::after {
+      opacity: calc(map.get($interaction-style, hovered) / 100);
+    }
+    &:focus-visible::after {
+      opacity: calc(map.get($interaction-style, focused) / 100);
+    }
+    &:active::after {
+      opacity: calc(map.get($interaction-style, pressed) / 100);
+    }
+  }
+  &[aria-disabled='true'] {
+    pointer-events: none;
+    &::after {
+      opacity: 0;
+    }
+  }
+}
+
+@mixin apply-tw-interaction() {
+  @each $type, $value in $interaction {
+    .interaction-#{$type} {
+      @include interaction($type);
+    }
+  }
+}

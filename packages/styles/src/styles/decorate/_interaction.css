@@ -1,0 +1,90 @@
+@utility interaction-normal {
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.1s ease;
+    background-color: var(--color-label-normal);
+    border-radius: inherit;
+  }
+  &:hover::after {
+    opacity: 0.05;
+  }
+  &:focus-visible::after {
+    opacity: 0.08;
+  }
+  &:active::after {
+    opacity: 0.12;
+  }
+
+  &[aria-disabled='true'] {
+    pointer-events: none;
+    &::after {
+      opacity: 0;
+    }
+  }
+}
+@utility interaction-light {
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.1s ease;
+    background-color: var(--color-label-normal);
+    border-radius: inherit;
+  }
+  &:hover::after {
+    opacity: 0.0375;
+  }
+  &:focus-visible::after {
+    opacity: 0.06;
+  }
+  &:active::after {
+    opacity: 0.09;
+  }
+
+  &[aria-disabled='true'] {
+    pointer-events: none;
+    &::after {
+      opacity: 0;
+    }
+  }
+}
+@utility interaction-strong {
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.1s ease;
+    background-color: var(--color-label-normal);
+    border-radius: inherit;
+  }
+  &:hover::after {
+    opacity: 0.075;
+  }
+  &:focus-visible::after {
+    opacity: 0.12;
+  }
+  &:active::after {
+    opacity: 0.18;
+  }
+
+  &[aria-disabled='true'] {
+    pointer-events: none;
+    &::after {
+      opacity: 0;
+    }
+  }
+}

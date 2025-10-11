@@ -1,0 +1,5 @@
+{
+  "extends": "@nodecrew/typescript-config/node.json",
+  "include": ["./.storybook/**/*.ts"],
+  "exclude": []
+}

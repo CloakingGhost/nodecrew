@@ -1,0 +1,118 @@
+import { Meta } from "@storybook/blocks";
+import colors from "./colors.json";
+
+<Meta title="Styles/Color - Semantic" />
+
+export const semanticColors = {
+  static: {
+    white: colors.common["100"],
+    black: colors.common["0"],
+  },
+  primary: {
+    normal: colors.blue["50"],
+  },
+  label: {
+    normal: colors.coolNeutral["10"],
+    strong: colors.common["0"],
+    neutral: colors.neutral["22"] + " / 0.88",
+    alternative: colors.coolNeutral["25"] + " / 0.61",
+    assistive: colors.coolNeutral["25"] + " / 0.28",
+    disable: colors.coolNeutral["25"] + " / 0.16",
+  },
+  background: {
+    "normal-normal": colors.common["100"],
+    "normal-alternative": colors.coolNeutral["99"],
+    "elevated-normal": colors.common["100"],
+    "elevated-alternative": colors.coolNeutral["99"],
+  },
+  interaction: {
+    inactive: colors.coolNeutral["70"],
+    disable: colors.coolNeutral["98"],
+  },
+  line: {
+    "normal-normal": colors.coolNeutral["50"] + " / 0.22",
+    "normal-neutral": colors.coolNeutral["50"] + " / 0.16",
+    "normal-alternative": colors.coolNeutral["50"] + " / 0.08",
+    "solid-normal": colors.coolNeutral["96"],
+    "solid-neutral": colors.coolNeutral["97"],
+    "solid-alternative": colors.coolNeutral["98"],
+  },
+  status: {
+    positive: colors.green["50"],
+    cautionary: colors.orange["50"],
+    negative: colors.red["50"],
+  },
+  accent: {
+    lime: colors.lime["50"],
+    cyan: colors.cyan["50"],
+    lightBlue: colors.lightBlue["50"],
+    violet: colors.violet["50"],
+    purple: colors.purple["50"],
+    pink: colors.pink["50"],
+  },
+  inverse: {
+    primary: colors.blue["60"],
+    background: colors.coolNeutral["15"],
+    label: colors.coolNeutral["99"],
+  },
+  fill: {
+    normal: colors.coolNeutral["50"] + " / 0.08",
+    strong: colors.coolNeutral["50"] + " / 0.16",
+    alternative: colors.coolNeutral["50"] + " / 0.05",
+  },
+  material: {
+    dimmer: colors.coolNeutral["10"] + " / 0.52",
+  },
+};
+
+<div>
+  <h1>Colors</h1>
+  <p>DailyAlgo에서 사용하는 컬러 시맨틱입니다.</p>
+  <div>
+    <div>
+      {Object.entries(semanticColors).map(([key, value]) => (
+        <div>
+          <h2>{key}</h2>
+          <table>
+            <thead>
+              <tr>
+            <th>Color</th>
+            <th>ClassName</th>
+            <th>OKLCH Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.entries(value).map(([token, value]) => (
+            <tr key={key}>
+              <td style={{
+                  backgroundColor: `var(--color-${key}-${token})`,
+                    width: "48px",
+                    height: "16px",
+                  }}
+              />
+              <td>{key}-{token}</td>
+              <td>{value}</td>
+              </tr>
+            ))}
+              </tbody>
+            </table>
+          </div>
+        ))}
+    </div>
+
+  </div>
+</div>
+
+<h3>Example</h3>
+
+{/* prettier-ignore */}
+```jsx
+
+<h1 className="text-{ value }">
+  Colored Text
+</h1>
+
+<div className="bg-{ value }">
+  Colored Background
+</div>; 
+```

@@ -1,0 +1,15 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
+
+@import './src/styles/index.css';
+
+@import 'tailwindcss';
+
+@source '../../apps/web';
+@source '../../packages';
+
+@plugin 'tailwind-scrollbar';
+@plugin 'tailwindcss-animate';
+
+:root {
+  color: initial;
+}
