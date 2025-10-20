@@ -7,7 +7,7 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",
-    "prepare": "husky install && git config commit.template .gitmessage"
+    "prepare": "git config commit.template .gitmessage"
   },
   "devDependencies": {
     "@storybook/react": "^8.4.4",

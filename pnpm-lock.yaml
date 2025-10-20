@@ -127,6 +127,9 @@ importers:
       '@nodecrew/styles':
         specifier: workspace:*
         version: link:../../packages/styles
+      '@remixicon/react':
+        specifier: ^4.6.0
+        version: 4.6.0(react@19.2.0)
       '@tailwindcss/postcss':
         specifier: ^4.1.14
         version: 4.1.14

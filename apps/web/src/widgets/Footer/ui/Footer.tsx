@@ -1,6 +1,4 @@
-import Image from 'next/image';
-
-const logo = '/assets/images/logo.png';
+import { Logo } from '@/shared';
 
 const footerInfo = {
   companyName: '주식회사 노드크루',
@@ -10,15 +8,15 @@ const footerInfo = {
   copyright: 'Copyright © 2025 NODECREW Co.,ltd. All Rights Reserved.',
 };
 
+const logSize = { width: 242, height: 40 };
+
 function Footer() {
   return (
     <footer className="bg-background-normal-normal border-1 border-line-normal-normal md:px-42 px-8 py-8 md:py-16">
       <div>
-        <Image
-          src={logo}
-          alt="logo"
-          width={242}
-          height={40}
+        <Logo
+          width={logSize.width}
+          height={logSize.height}
           className="h-auto"
         />
       </div>

@@ -12,11 +12,32 @@
     ]
   },
   "include": [
-    "**/*.ts",
-    "**/*.tsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
     "next-env.d.ts",
     "next.config.js",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "svgr.d.ts" // 커스텀 타입
   ],
-  "exclude": ["node_modules"]
+
+  // 컴파일 제외 대상
+  "exclude": ["node_modules", ".next", ".turbo", "dist"],
+
+  "watchOptions": {
+    // 파일 변경을 감시하지 않을 디렉토리를 지정
+    "excludeDirectories": [
+      "**/node_modules", // 외부 라이브러리 변경 무시
+      "**/.next", // 빌드 결과물 변경 무시
+      "**/.turbo", // 캐시 변경 무시
+      "**/dist", // 배포물 변경 무시
+      "../../packages", // 다른 패키지 변경 무시
+      "../storybook" // Storybook 변경 무시
+    ],
+    // 변경을 감시하지 않을 파일 지정
+    "excludeFiles": [
+      "**/.git/**",
+      "**/package-lock.json",
+      "**/pnpm-lock.yaml"
+    ]
+  }
 }
