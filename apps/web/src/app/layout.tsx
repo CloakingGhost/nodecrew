@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 import './globals.css';
-import { Footer } from '@/widgets/Footer';
+import { Footer } from '@/widgets/footer';
 import { NavigationBar } from '@/widgets/NavigationBar';
 
 export const metadata: Metadata = {

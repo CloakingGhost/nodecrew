@@ -11,13 +11,16 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
     "@nodecrew/design-system": "workspace:*",
     "@nodecrew/styles": "workspace:*",
     "@remixicon/react": "^4.6.0",
     "@tailwindcss/postcss": "^4.1.14",
     "next": "^15.5.0",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-hook-form": "^7.65.0",
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "@nodecrew/eslint-config": "workspace:*",
