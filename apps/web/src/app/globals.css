@@ -5,7 +5,7 @@ body {
   color: var(--color-label-normal);
 }
 
-@theme {
+:root {
   --background-image-primary-radial-gradient: radial-gradient(
     81.07% 165.6% at 50% 76.92%,
     oklch(0.6257 0.187 263.79) 0%,
@@ -17,11 +17,16 @@ body {
   .bg-primary-radial-gradient {
     background-image: var(--background-image-primary-radial-gradient);
   }
-  
+
   .text-primary-radial-gradient {
     background-image: var(--background-image-primary-radial-gradient);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .icon-primary-radial-gradient svg {
+    fill: url(#icon-gradient-primary);
   }
 }

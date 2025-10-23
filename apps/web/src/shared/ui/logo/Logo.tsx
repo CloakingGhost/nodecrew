@@ -4,12 +4,18 @@ type LogoProps = {
   width: number;
   height: number;
   className?: string;
+  priority?: boolean;
 };
 
 const LOGO_SRC = '/assets/images/logo-company.svg';
 const LOGO_ALT = 'Our Company Logo';
 
-export function Logo({ width, height, className }: LogoProps) {
+export function Logo({
+  width,
+  height,
+  className,
+  priority = true,
+}: LogoProps) {
   return (
     <Image
       src={LOGO_SRC}
@@ -17,6 +23,7 @@ export function Logo({ width, height, className }: LogoProps) {
       width={width}
       height={height}
       className={className}
+      priority={priority}
     />
   );
 }
@@ -24,7 +31,7 @@ export function Logo({ width, height, className }: LogoProps) {
 /**
  How To Use
  
-  import { Logo } from '@/shared';
+  import { Logo } from '@/shared/ui';
  
   function foo(){
     return (

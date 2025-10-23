@@ -1,1 +1,1 @@
-export { ContactInquiryForm } from './ContactInquiryForm'
+export { default as ContactInquiryForm } from './ContactInquiryForm'

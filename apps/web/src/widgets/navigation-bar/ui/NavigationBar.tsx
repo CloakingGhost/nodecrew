@@ -45,35 +45,32 @@ const NAV_LINKS: readonly NavLink[] = [
   },
 ];
 
-function LogoLink() {
+function LogoLink({ onClick }: { onClick?: () => void }) {
   return (
-    <Link href="/">
+    <Link href="/" onClick={onClick}>
       <Logo {...LOGO_SIZE} />
     </Link>
   );
 }
-
 // 링크 버튼
-function LinkButton() {
+function LinkButton({ onClick }: { onClick?: () => void }) {
   return (
     <>
       {NAV_LINKS.map(({ name, href, variant, hasIcon }) => (
-        <Button
-          key={name}
-          variant={variant}
-          size="small"
-          iconLeft={hasIcon ? <RiExternalLinkLine size={16} /> : undefined}
-          className={
-            hasIcon ? 'bg-fill-normal text-label-normal' : 'text-label-normal'
-          }
-        >
-          <Link
-            href={href}
-            className="typography-heading2-bold md:typography-label1-normal-bold"
+        <Link key={name} href={href} onClick={onClick}>
+          <Button
+            variant={variant}
+            size="small"
+            iconLeft={hasIcon ? <RiExternalLinkLine size={16} /> : undefined}
+            className={
+              hasIcon ? 'bg-fill-normal text-label-normal' : 'text-label-normal'
+            }
           >
-            {name}
-          </Link>
-        </Button>
+            <span className="typography-heading2-bold md:typography-label1-normal-bold">
+              {name}
+            </span>
+          </Button>
+        </Link>
       ))}
     </>
   );
@@ -82,30 +79,31 @@ function LinkButton() {
 // 메인 로직
 function NavigationBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const handleMenu = (status: boolean) => setIsMenuOpen(status);
 
   return (
-    <nav className="sticky top-0 z-50 flex justify-center px-5 py-10">
+    <nav className="fixed top-0 z-50 flex w-full justify-center px-5 py-10">
       {/* --- PC용 네비게이션 --- */}
       <div className="hidden w-full justify-center md:flex">
         <div className="max-w-275 h-18 shadow-emphasize border-1 border-line-normal-alternative bg-background-elevated-alternative flex w-full items-center justify-between rounded-full px-10">
           <LogoLink />
 
-          <div className="flex w-64 justify-between">
+          <div className="flex w-64 items-center justify-between">
             <LinkButton />
           </div>
         </div>
       </div>
 
       {/* --- 모바일용 네비게이션 --- */}
-      <div className="relative z-50 block w-full md:hidden">
+      <div className="relative block w-full md:hidden">
         <div className="relative z-50 flex items-center justify-between">
-          <div className="bg-background-elevated-alternative shadow-emphasize flex h-16 w-52 items-center justify-center rounded-full">
+          <div className="border-1 border-line-normal-alternative bg-background-elevated-alternative shadow-emphasize flex h-16 w-52 items-center justify-center rounded-full">
             <LogoLink />
           </div>
           <Button
             variant="text/assistive"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="bg-background-elevated-alternative shadow-emphasize flex h-16 w-16 cursor-pointer items-center justify-center rounded-full p-0 focus:outline-none"
+            onClick={() => handleMenu(!isMenuOpen)}
+            className="border-1 border-line-normal-alternative bg-background-elevated-alternative shadow-emphasize flex size-16 items-center justify-center rounded-full p-0 focus:outline-none"
           >
             {isMenuOpen ? (
               <RiCloseLargeLine size={24} />
@@ -119,7 +117,7 @@ function NavigationBar() {
         {isMenuOpen && (
           <div className="animate-in fade-in-0 bg-background-elevated-alternative/80 fixed left-0 top-0 z-40 size-full p-10 pt-32 backdrop-blur">
             <div className="flex flex-col items-end gap-8">
-              <LinkButton />
+              <LinkButton onClick={() => handleMenu(false)} />
             </div>
           </div>
         )}

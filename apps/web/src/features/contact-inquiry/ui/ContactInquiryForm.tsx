@@ -73,7 +73,7 @@ type FormProps = {
   hashId?: string;
 };
 
-export function ContactInquiryForm({ hashId }: FormProps) {
+export default function ContactInquiryForm({ hashId }: FormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const form = useForm<ContactInquiryFormData>({
     resolver: zodResolver(contactInquiryFormSchema),
@@ -101,11 +101,12 @@ export function ContactInquiryForm({ hashId }: FormProps) {
 
   return (
     <ToastProvider>
-      <section id={hashId} className="max-w-200 py-30 mx-auto flex w-full flex-col gap-16 px-5">
+      <section
+        id={hashId}
+        className="max-w-200 py-30 mx-auto flex w-full flex-col gap-16 px-5"
+      >
         <header className="typography-title2-bold grid gap-1">
-          <h2 className="text-primary-radial-gradient">
-            노드크루와 함께
-          </h2>
+          <h2 className="text-primary-radial-gradient">노드크루와 함께</h2>
           <p className="text-label-normal">진행하고 싶은 교육이 있으신가요?</p>
         </header>
         <Form {...form}>
@@ -262,12 +263,12 @@ export function ContactInquiryForm({ hashId }: FormProps) {
  * import Link from 'next/link';
  *
  * const hashId: string = 'contact'; // optional
- * 
+ *
  * export function SomePage() {
  *    return (
  *    <>
  *      <Link href={`#${hashId}`}>Move</Link>
- * 
+ *
  *      <ContactInquiryForm hashId = { hashId } />
  *    </>
  *  );

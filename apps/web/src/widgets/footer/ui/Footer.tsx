@@ -27,12 +27,7 @@ function Footer() {
         </div>
         <div>{footerInfo.ceo}</div>
         <div>
-          <a
-            href={`mailto:${footerInfo.email}`}
-            className="hover:bg-label-assistive underline"
-          >
-            {footerInfo.email}
-          </a>
+          <a href={`mailto:${footerInfo.email}`}>{footerInfo.email}</a>
         </div>
         <div>{footerInfo.address}</div>
         <hr className="text-line-normal-normal my-2" />
