@@ -69,7 +69,11 @@ const contactInquiryFormSchema = z.object({
 
 type ContactInquiryFormData = z.infer<typeof contactInquiryFormSchema>;
 
-export function ContactInquiryForm() {
+type FormProps = {
+  hashId?: string;
+};
+
+export function ContactInquiryForm({ hashId }: FormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const form = useForm<ContactInquiryFormData>({
     resolver: zodResolver(contactInquiryFormSchema),
@@ -97,9 +101,11 @@ export function ContactInquiryForm() {
 
   return (
     <ToastProvider>
-      <section className="max-w-200 py-30 mx-auto flex w-full flex-col gap-16 px-5">
+      <section id={hashId} className="max-w-200 py-30 mx-auto flex w-full flex-col gap-16 px-5">
         <header className="typography-title2-bold grid gap-1">
-          <h2 className="text-primary-radial-gradient">노드크루와 함께</h2>
+          <h2 className="text-primary-radial-gradient">
+            노드크루와 함께
+          </h2>
           <p className="text-label-normal">진행하고 싶은 교육이 있으신가요?</p>
         </header>
         <Form {...form}>
@@ -246,17 +252,25 @@ export function ContactInquiryForm() {
   );
 }
 
-
 /**
  * How To Use
- * 
+ *
  * 문의 메일 컴포넌트
  * 필요한 컴포넌트 내에서 임포트하여 사용
- * 
- * import { ContactInquiryForm } from "@/features/contact-inqury"
+ *
+ * import { ContactInquiryForm } from "@/features/contact-inquiry"
+ * import Link from 'next/link';
+ *
+ * const hashId: string = 'contact'; // optional
  * 
  * export function SomePage() {
- *    return (<ContactInquiryForm/>)
- * }
+ *    return (
+ *    <>
+ *      <Link href={`#${hashId}`}>Move</Link>
  * 
+ *      <ContactInquiryForm hashId = { hashId } />
+ *    </>
+ *  );
+ * }
+ *
  */
