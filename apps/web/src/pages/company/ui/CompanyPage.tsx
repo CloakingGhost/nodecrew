@@ -6,10 +6,9 @@ import {
 
 import { ContactInquiryForm } from '@/features/contact-inquiry';
 
-import { Logo } from '@/shared/ui';
+import { Logo, SvgRadialGradient } from '@/shared/ui';
 
 import { Galaxy } from './galaxy';
-import { SvgRadialGradient } from './gradient';
 import { Orb } from './orb';
 import { PixelCard } from './pixel-card';
 

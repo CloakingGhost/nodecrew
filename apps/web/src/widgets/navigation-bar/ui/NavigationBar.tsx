@@ -82,7 +82,7 @@ function NavigationBar() {
   const handleMenu = (status: boolean) => setIsMenuOpen(status);
 
   return (
-    <nav className="fixed top-0 z-50 flex w-full justify-center px-5 py-10">
+    <nav className="fixed top-0 z-50 flex w-full justify-center px-5 py-5">
       {/* --- PC용 네비게이션 --- */}
       <div className="hidden w-full justify-center md:flex">
         <div className="max-w-275 h-18 shadow-emphasize border-1 border-line-normal-alternative bg-background-elevated-alternative flex w-full items-center justify-between rounded-full px-10">
