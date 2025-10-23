@@ -1,4 +1,4 @@
-import { Logo } from '@/shared';
+import { Logo } from '@/shared/ui';
 
 const footerInfo = {
   companyName: '주식회사 노드크루',

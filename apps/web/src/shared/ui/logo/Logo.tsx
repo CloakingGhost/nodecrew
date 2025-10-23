@@ -1,27 +1,25 @@
 import Image from 'next/image';
 
-type Props = {
+type LogoProps = {
   width: number;
   height: number;
   className?: string;
 };
 
-function Logo({ width, height, className }: Props) {
-  const logo = '/assets/images/logo-company.svg';
-  const alt = 'Our Company Logo';
+const LOGO_SRC = '/assets/images/logo-company.svg';
+const LOGO_ALT = 'Our Company Logo';
 
+export function Logo({ width, height, className }: LogoProps) {
   return (
     <Image
-      src={logo}
-      alt={alt}
+      src={LOGO_SRC}
+      alt={LOGO_ALT}
       width={width}
       height={height}
       className={className}
     />
   );
 }
-
-export default Logo;
 
 /**
  How To Use

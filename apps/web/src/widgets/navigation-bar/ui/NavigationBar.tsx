@@ -13,7 +13,7 @@ import {
   RiExternalLinkLine,
 } from '@remixicon/react';
 
-import { Logo } from '@/shared';
+import { Logo } from '@/shared/ui';
 
 const LOGO_SIZE = { width: 121, height: 20 } as const;
 
@@ -84,21 +84,21 @@ function NavigationBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 flex justify-center px-5 py-10">
+    <nav className="sticky top-0 z-50 flex justify-center px-5 py-10">
       {/* --- PC용 네비게이션 --- */}
       <div className="hidden w-full justify-center md:flex">
-        <nav className="max-w-275 h-18 shadow-emphasize border-1 border-line-normal-alternative bg-background-elevated-alternative flex w-full items-center justify-between rounded-full px-10">
+        <div className="max-w-275 h-18 shadow-emphasize border-1 border-line-normal-alternative bg-background-elevated-alternative flex w-full items-center justify-between rounded-full px-10">
           <LogoLink />
 
           <div className="flex w-64 justify-between">
             <LinkButton />
           </div>
-        </nav>
+        </div>
       </div>
 
       {/* --- 모바일용 네비게이션 --- */}
       <div className="relative z-50 block w-full md:hidden">
-        <nav className="relative z-50 flex items-center justify-between">
+        <div className="relative z-50 flex items-center justify-between">
           <div className="bg-background-elevated-alternative shadow-emphasize flex h-16 w-52 items-center justify-center rounded-full">
             <LogoLink />
           </div>
@@ -113,7 +113,7 @@ function NavigationBar() {
               <RiMenuLine size={24} />
             )}
           </Button>
-        </nav>
+        </div>
 
         {/* 모바일 메뉴 패널 */}
         {isMenuOpen && (
@@ -124,7 +124,7 @@ function NavigationBar() {
           </div>
         )}
       </div>
-    </header>
+    </nav>
   );
 }
 
