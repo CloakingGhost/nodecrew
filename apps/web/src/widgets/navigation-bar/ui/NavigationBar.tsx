@@ -103,12 +103,12 @@ function NavigationBar() {
           <Button
             variant="text/assistive"
             onClick={() => handleMenu(!isMenuOpen)}
-            className="border-1 border-line-normal-alternative bg-background-elevated-alternative shadow-emphasize flex size-16 items-center justify-center rounded-full p-0 focus:outline-none"
+            className="border-1 border-line-normal-alternative bg-background-elevated-alternative shadow-emphasize flex size-16 items-center justify-center rounded-full !m-0 focus:outline-none"
           >
             {isMenuOpen ? (
-              <RiCloseLargeLine size={24} />
+              <RiCloseLargeLine className="size-6" />
             ) : (
-              <RiMenuLine size={24} />
+              <RiMenuLine className="size-6" />
             )}
           </Button>
         </div>

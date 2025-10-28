@@ -1,1 +1,1 @@
-export { default as PixelCard } from './PixelCard'
+export { default as PixelCard } from './PixelCard';

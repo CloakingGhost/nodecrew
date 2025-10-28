@@ -1,1 +1,1 @@
-export { default as Orb } from './Orb'
+export { default as Orb } from './Orb';

@@ -68,24 +68,26 @@ const PIXEL_CARD_ITEMS = [
   },
 ] as const;
 
-const ICON_SIZE = 64;
-
 type PielxCardProps = {
   Icon: RemixiconComponentType;
   title: string;
   content: readonly string[];
-  size: number;
+  size: number | string;
 };
 
 function PixelCardItem({ Icon, title, content, size }: PielxCardProps) {
   return (
     <PixelCard className="h-95 bg-background-normal-normal rounded-4xl max-w-110 md:max-w-134 w-full p-8 md:p-16">
       <div className="flex h-full w-full items-center justify-center md:justify-start">
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-5 sm:gap-10">
           <header>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-2 sm:gap-4">
               <div className="icon-primary-radial-gradient">
-                <Icon size={size} />
+                <Icon
+                  {...(typeof size === 'number'
+                    ? { size }
+                    : { className: String(size) })}
+                />
               </div>
               <p className="text-primary-radial-gradient typography-display2-bold">
                 {title}
@@ -111,7 +113,7 @@ export default function CompanyPage() {
   return (
     <main className="break-keep">
       <SvgRadialGradient />
-      <section className="bg-static-black relative h-dvh">
+      <section className="bg-static-black relative h-lvh">
         <div className="absolute inset-0">
           <Galaxy {...REACT_BITS.GALAXY} />
         </div>
@@ -147,7 +149,7 @@ export default function CompanyPage() {
               </div>
             </h2>
           </div>
-          <div className="typography-title3-Bold text-static-white flex flex-col items-center justify-center">
+          <div className="typography-title3-bold text-static-white flex flex-col items-center justify-center">
             <div className="text-start md:text-center">
               <p>노드크루의 교육은 국내 최상위 SW, AI 강사진과</p>
               <p>
@@ -157,7 +159,7 @@ export default function CompanyPage() {
           </div>
           <div className="flex flex-col items-center justify-center gap-4 md:gap-8 lg:flex-row">
             {PIXEL_CARD_ITEMS.map((item, idx) => (
-              <PixelCardItem key={idx} size={ICON_SIZE} {...item} />
+              <PixelCardItem key={idx} size="size-16" {...item} />
             ))}
           </div>
         </div>

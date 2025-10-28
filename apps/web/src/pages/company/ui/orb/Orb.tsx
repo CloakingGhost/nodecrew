@@ -169,7 +169,7 @@ const frag = /* glsl */ `
       gl_FragColor = vec4(col.rgb * col.a, col.a);
     }
   `;
-  
+
 export default function Orb({
   hue = 0,
   hoverIntensity = 0.2,

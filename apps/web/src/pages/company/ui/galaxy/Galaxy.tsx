@@ -269,7 +269,7 @@ export default function Galaxy({
         uTransparent: { value: transparent },
       },
     });
-    
+
     function resize() {
       const scale = 1;
       renderer.setSize(ctn.offsetWidth * scale, ctn.offsetHeight * scale);

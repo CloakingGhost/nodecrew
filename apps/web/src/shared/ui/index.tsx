@@ -1,2 +1,2 @@
 export { Logo } from './logo';
-export { SvgRadialGradient } from './gradient';
+export { SvgRadialGradient, SvgPinkAccentMiniLinear } from './gradient';

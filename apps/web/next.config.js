@@ -1,26 +1,42 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  webpack: (config, { dev }) => {
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ['@svgr/webpack'],
-    });
+  webpack(config) {
+    const fileLoaderRule = config.module.rules.find(rule =>
+      rule.test?.test?.('.svg'),
+    );
 
-    if (dev) {
-      // HMR (Hot Module Replacement) 설정
-      config.watchOptions = {
-        ignored: [
-          '**/node_modules',
-          '**/.git',
-          '**/.next',
-          '**/.turbo',
-          '**/dist',
-          '**/packages/**',
-          '**/apps/storybook/**',
+    config.module.rules.push(
+      {
+        test: /\.svg$/i,
+        issuer: fileLoaderRule.issuer,
+        resourceQuery: /react/,
+        use: ['@svgr/webpack'],
+      },
+      {
+        test: /\.svg$/i,
+        issuer: fileLoaderRule.issuer,
+        resourceQuery: { not: /react/ },
+        use: [
+          {
+            loader: fileLoaderRule.loader,
+            options: fileLoaderRule.options,
+          },
         ],
-      };
-    }
+      },
+    );
+
+    fileLoaderRule.exclude = /\.svg$/i;
+
     return config;
+  },
+
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js',
+      },
+    },
   },
 };
 

@@ -10,19 +10,14 @@ type LogoProps = {
 const LOGO_SRC = '/assets/images/logo-company.svg';
 const LOGO_ALT = 'Our Company Logo';
 
-export function Logo({
-  width,
-  height,
-  className,
-  priority = true,
-}: LogoProps) {
+export function Logo({ width, height, className, priority = true }: LogoProps) {
   return (
     <Image
       src={LOGO_SRC}
       alt={LOGO_ALT}
       width={width}
       height={height}
-      className={className}
+      className={`h-auto ${className}`}
       priority={priority}
     />
   );

@@ -11,22 +11,98 @@ body {
     oklch(0.6257 0.187 263.79) 0%,
     oklch(0.3973 0.1677 262.84) 100%
   );
+  --color-pink-accent-mini: oklch(0.7266 0.2005 321.31);
+
+  --color-pink-accent-mini-linear: linear-gradient(
+    90deg,
+    var(--color-pink-accent-mini) 0%,
+    oklch(0.6946 0.1561 299.11) 51.44%,
+    oklch(0.5323 0.2276 262.92) 100%
+  );
 }
 
-@layer utilities {
-  .bg-primary-radial-gradient {
-    background-image: var(--background-image-primary-radial-gradient);
-  }
+/* Primary Radial */
+.bg-primary-radial-gradient {
+  background-image: var(--background-image-primary-radial-gradient);
+}
 
-  .text-primary-radial-gradient {
-    background-image: var(--background-image-primary-radial-gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-  }
+.text-primary-radial-gradient {
+  background-image: var(--background-image-primary-radial-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
 
-  .icon-primary-radial-gradient svg {
-    fill: url(#icon-gradient-primary);
-  }
+.icon-primary-radial-gradient svg {
+  fill: url(#icon-gradient-primary);
+}
+
+/* Pink Accent Mini */
+.bg-pink-accent-mini {
+  background-color: var(--color-pink-accent-mini);
+}
+
+.text-pink-accent-mini {
+  color: var(--color-pink-accent-mini);
+}
+
+/* Pink Accent Mini Linear */
+.bg-pink-accent-mini-linear {
+  background-image: var(--color-pink-accent-mini-linear);
+}
+
+.text-pink-accent-mini-linear {
+  background-image: var(--color-pink-accent-mini-linear);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.fill-pink-accent-mini-linear svg {
+  fill: url(#fill-pink-accent-mini-linear);
+}
+
+/* Shadow */
+.shadow-media {
+  filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1))
+    drop-shadow(0px 40px 87px rgba(0, 0, 0, 0.1))
+    drop-shadow(0px 158px 158px rgba(0, 0, 0, 0.09))
+    drop-shadow(0px 356px 214px rgba(0, 0, 0, 0.05))
+    drop-shadow(0px 634px 253px rgba(0, 0, 0, 0.01))
+    drop-shadow(0px 990px 277px rgba(0, 0, 0, 0));
+}
+
+.shadow-pink-accent-mini {
+  position: relative;
+  z-index: 10;
+}
+
+.shadow-pink-accent-mini::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    #b4f3f4 0deg,
+    #ab84ef 67.5deg,
+    #1b5ced 129.81deg,
+    #de75f1 178.27deg,
+    #f9edfc 214.62deg,
+    #e3a0ed 242.31deg,
+    #1b5ced 299.42deg,
+    #b4f3f4 360deg
+  );
+
+  filter: blur(200px);
+  z-index: -1;
+}
+
+/* Abunation */
+.h-animation {
+  height: 300lvh;
 }
