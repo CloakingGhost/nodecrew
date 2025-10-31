@@ -1,8 +1,6 @@
-import {
-  RiTeamFill,
-  RiPresentationFill,
-  type RemixiconComponentType,
-} from '@remixicon/react';
+import { Separator } from '@nodecrew/design-system';
+
+import { RiTeamFill, RiPresentationFill } from '@remixicon/react';
 
 import { ContactInquiryForm } from '@/features/contact-inquiry';
 
@@ -10,7 +8,7 @@ import { Logo, SvgRadialGradient } from '@/shared/ui';
 
 import { Galaxy } from './galaxy';
 import { Orb } from './orb';
-import { PixelCard } from './pixel-card';
+import { PixelCardItem } from './pixel-card';
 
 const LOGO_SIZE = { width: 218, height: 36 } as const;
 
@@ -68,47 +66,6 @@ const PIXEL_CARD_ITEMS = [
   },
 ] as const;
 
-type PielxCardProps = {
-  Icon: RemixiconComponentType;
-  title: string;
-  content: readonly string[];
-  size: number | string;
-};
-
-function PixelCardItem({ Icon, title, content, size }: PielxCardProps) {
-  return (
-    <PixelCard className="h-95 bg-background-normal-normal rounded-4xl max-w-110 md:max-w-134 w-full p-8 md:p-16">
-      <div className="flex h-full w-full items-center justify-center md:justify-start">
-        <div className="flex flex-col gap-5 sm:gap-10">
-          <header>
-            <div className="flex flex-col gap-2 sm:gap-4">
-              <div className="icon-primary-radial-gradient">
-                <Icon
-                  {...(typeof size === 'number'
-                    ? { size }
-                    : { className: String(size) })}
-                />
-              </div>
-              <p className="text-primary-radial-gradient typography-display2-bold">
-                {title}
-              </p>
-            </div>
-          </header>
-          <main className="flex flex-col gap-1 sm:gap-0">
-            {content.map((c, idx) => (
-              <p
-                key={idx}
-                className="typography-headline1-bold text-label-neutral"
-              >
-                {c}
-              </p>
-            ))}
-          </main>
-        </div>
-      </div>
-    </PixelCard>
-  );
-}
 export default function CompanyPage() {
   return (
     <main className="break-keep">
@@ -119,7 +76,7 @@ export default function CompanyPage() {
         </div>
         <div className="pointer-events-none relative z-10 flex h-full items-center justify-center">
           <h1 className="typography-display1-bold text-primary-radial-gradient flex flex-col items-center">
-            <span>교육에 대한 진심</span>
+            <span>교육에 대한 진심,</span>
             <span>기술에 대한 깊이</span>
           </h1>
         </div>
@@ -150,16 +107,16 @@ export default function CompanyPage() {
             </h2>
           </div>
           <div className="typography-title3-bold text-static-white flex flex-col items-center justify-center">
-            <div className="text-start md:text-center">
-              <p>노드크루의 교육은 국내 최상위 SW, AI 강사진과</p>
-              <p>
+            <p className="text-start sm:text-center ">
+              <span className="sm:block">노드크루의 교육은 국내 최상위 SW, AI 강사진과</span>
+              <span className="sm:block">
                 자체 교육 솔루션을 개발하는 현직 개발진으로 이루어진 팀입니다.
-              </p>
-            </div>
+              </span>
+            </p>
           </div>
           <div className="flex flex-col items-center justify-center gap-4 md:gap-8 lg:flex-row">
             {PIXEL_CARD_ITEMS.map((item, idx) => (
-              <PixelCardItem key={idx} size="size-16" {...item} />
+              <PixelCardItem key={idx} size="size-12" {...item} />
             ))}
           </div>
         </div>
@@ -168,7 +125,7 @@ export default function CompanyPage() {
       <section className="py-30 flex w-full flex-col items-center justify-center gap-8 px-2 md:flex-row md:items-start md:gap-16 md:px-5">
         <div className="flex flex-col items-center gap-2.5 py-10 md:items-start">
           <Logo {...LOGO_SIZE} />
-          <p className="typography-title2-bold text-label-normal">
+          <p className="typography-heading1-medium text-label-normal">
             주요 교육 이력
           </p>
         </div>
@@ -177,12 +134,12 @@ export default function CompanyPage() {
             history ? (
               <p
                 key={idx}
-                className="typography-headline1-bold md:typography-heading1-bold"
+                className="typography-body1-normal-bold"
               >
                 {history}
               </p>
             ) : (
-              <hr key={idx} className="text-line-normal-normal" />
+              <Separator key={idx} />
             ),
           )}
         </div>

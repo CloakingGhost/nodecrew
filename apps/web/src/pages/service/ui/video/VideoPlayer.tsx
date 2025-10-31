@@ -33,7 +33,7 @@ export default function VideoPlayer({
 
       if (entry?.isIntersecting) {
         if (autoPlay) {
-          videoElement.play().catch(error => console.log(error));
+          videoElement.play().catch();
         }
       } else {
         videoElement.pause();

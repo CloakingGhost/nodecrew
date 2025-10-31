@@ -137,7 +137,7 @@ export default function ServicePage() {
             </div>
           </div>
           {/* media */}
-          <div className="shadow-pink-accent-mini max-w-225 w-full self-end">
+          <div className="shadow-ai max-w-225 w-full self-end">
             <Image
               {...MEDIA_SOURCES.TOP_BAR.DRAK}
               className="h-auto w-full object-contain"

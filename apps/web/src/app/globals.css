@@ -74,12 +74,12 @@ body {
     drop-shadow(0px 990px 277px rgba(0, 0, 0, 0));
 }
 
-.shadow-pink-accent-mini {
+.shadow-ai {
   position: relative;
   z-index: 10;
 }
 
-.shadow-pink-accent-mini::before {
+.shadow-ai::before {
   content: '';
   position: absolute;
   top: 0;

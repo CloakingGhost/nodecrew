@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 import { Button } from '@nodecrew/design-system';
 import type { ButtonProps } from '@nodecrew/design-system';
@@ -15,7 +16,7 @@ import {
 
 import { Logo } from '@/shared/ui';
 
-const LOGO_SIZE = { width: 121, height: 20 } as const;
+const LOGO_SIZE = { width: 121, height: 24 } as const;
 
 type NavLink = {
   name: string;
@@ -54,6 +55,8 @@ function LogoLink({ onClick }: { onClick?: () => void }) {
 }
 // 링크 버튼
 function LinkButton({ onClick }: { onClick?: () => void }) {
+  const currentPath = usePathname()
+
   return (
     <>
       {NAV_LINKS.map(({ name, href, variant, hasIcon }) => (
@@ -66,7 +69,7 @@ function LinkButton({ onClick }: { onClick?: () => void }) {
               hasIcon ? 'bg-fill-normal text-label-normal' : 'text-label-normal'
             }
           >
-            <span className="typography-heading2-bold md:typography-label1-normal-bold">
+            <span className={`typography-heading2-bold md:typography-label1-normal-bold ${currentPath?.startsWith(href) ? 'text-primary-normal': undefined}`}>
               {name}
             </span>
           </Button>
