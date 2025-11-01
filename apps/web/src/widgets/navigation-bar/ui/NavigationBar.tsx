@@ -55,7 +55,7 @@ function LogoLink({ onClick }: { onClick?: () => void }) {
 }
 // 링크 버튼
 function LinkButton({ onClick }: { onClick?: () => void }) {
-  const currentPath = usePathname()
+  const currentPath = usePathname();
 
   return (
     <>
@@ -69,7 +69,9 @@ function LinkButton({ onClick }: { onClick?: () => void }) {
               hasIcon ? 'bg-fill-normal text-label-normal' : 'text-label-normal'
             }
           >
-            <span className={`typography-heading2-bold md:typography-label1-normal-bold ${currentPath?.startsWith(href) ? 'text-primary-normal': undefined}`}>
+            <span
+              className={`typography-heading2-bold md:typography-label1-normal-bold ${currentPath?.startsWith(href) ? 'text-primary-normal' : undefined}`}
+            >
               {name}
             </span>
           </Button>
@@ -101,12 +103,12 @@ function NavigationBar() {
       <div className="relative block w-full md:hidden">
         <div className="relative z-50 flex items-center justify-between">
           <div className="border-1 border-line-normal-alternative bg-background-elevated-alternative shadow-emphasize flex h-16 w-52 items-center justify-center rounded-full">
-            <LogoLink />
+            <LogoLink onClick={() => handleMenu(false)} />
           </div>
           <Button
             variant="text/assistive"
             onClick={() => handleMenu(!isMenuOpen)}
-            className="border-1 border-line-normal-alternative bg-background-elevated-alternative shadow-emphasize flex size-16 items-center justify-center rounded-full !m-0 focus:outline-none"
+            className="border-1 border-line-normal-alternative bg-background-elevated-alternative shadow-emphasize !m-0 flex size-16 items-center justify-center rounded-full focus:outline-none"
           >
             {isMenuOpen ? (
               <RiCloseLargeLine className="size-6" />
@@ -118,8 +120,17 @@ function NavigationBar() {
 
         {/* 모바일 메뉴 패널 */}
         {isMenuOpen && (
-          <div className="animate-in fade-in-0 bg-background-elevated-alternative/80 fixed left-0 top-0 z-40 size-full p-10 pt-32 backdrop-blur">
-            <div className="flex flex-col items-end gap-8">
+          <div
+            className="animate-in fade-in-0 bg-background-elevated-alternative/80 fixed left-0 top-0 z-40 size-full p-10 pt-32 backdrop-blur duration-200"
+            onClick={e => {
+              console.log(e.target);
+              console.log(e.currentTarget);
+              if (e.target === e.currentTarget) {
+                handleMenu(false);
+              }
+            }}
+          >
+            <div className="ml-auto flex w-fit flex-col gap-8 text-right">
               <LinkButton onClick={() => handleMenu(false)} />
             </div>
           </div>

@@ -84,7 +84,7 @@ export default function CompanyPage() {
 
       <section className="shadow-emphasize bg-primary-radial-gradient py-30 typography-title3-bold text-static-white flex justify-center gap-2.5 px-5">
         <div className="flex flex-col gap-1 sm:gap-0">
-          <p>노드크루는 SW, AI 교육의 본질을 고민하는 팀입니다.</p>
+          <p>노드크루는 SW, AI 교육의 본질을 고민하는 팀입니다.&nbsp;</p>
           <p>
             최고의 강사진과 현직 개발진의 시너지를 통한 수준 높은 교육으로
             새로운 기준을 만듭니다.
@@ -107,8 +107,10 @@ export default function CompanyPage() {
             </h2>
           </div>
           <div className="typography-title3-bold text-static-white flex flex-col items-center justify-center">
-            <p className="text-start sm:text-center ">
-              <span className="sm:block">노드크루의 교육은 국내 최상위 SW, AI 강사진과</span>
+            <p className="text-start sm:text-center">
+              <span className="sm:block">
+                노드크루의 교육은 국내 최상위 SW, AI 강사진과&nbsp;
+              </span>
               <span className="sm:block">
                 자체 교육 솔루션을 개발하는 현직 개발진으로 이루어진 팀입니다.
               </span>
@@ -132,10 +134,7 @@ export default function CompanyPage() {
         <div className="shadow-emphasize bg-background-normal-normal rounded-4xl max-w-198 text-static-black flex flex-col gap-6 p-6 md:p-16">
           {HISTORY.map((history, idx) =>
             history ? (
-              <p
-                key={idx}
-                className="typography-body1-normal-bold"
-              >
+              <p key={idx} className="typography-body1-normal-bold">
                 {history}
               </p>
             ) : (

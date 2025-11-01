@@ -14,7 +14,7 @@ export async function sendContactInquiry(
   const webhookUrl = process.env.SLACK_WEBHOOK_URL;
 
   if (!webhookUrl) {
-    throw new Error('메시지 전송 설정에 오류가 발생했습니다.');
+    throw new Error('접수 중 문제가 발생하여 조치 중입니다. 잠시 후 다시 시도해주세요.');
   }
 
   const { company, charge, departmentAndPosition, email, phone, inquiry } =
