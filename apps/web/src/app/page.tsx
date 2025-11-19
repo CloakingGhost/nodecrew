@@ -1,9 +1,5 @@
-import { Button } from '@nodecrew/design-system';
+import { CompanyPage } from '@/pages/company';
 
 export default function Home() {
-  return (
-    <div>
-      <Button>Open alert</Button>
-    </div>
-  );
+  return <CompanyPage />;
 }
